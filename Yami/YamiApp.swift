@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct YamiApp: App {
+    @StateObject private var fetcher = RecipeCollectionFetcher()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(fetcher)
         }
     }
 }
