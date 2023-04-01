@@ -19,24 +19,23 @@ class RecipeCollectionFetcher: ObservableObject {
     
     var cancellables = Set<AnyCancellable>()
 
-     func fetchData() async throws -> AnyPublisher<Void, Error>
+     func fetchData() throws -> AnyPublisher<RecipeCollection, Error>
     {
-           guard let url = URL(string: urlString) else {
-               return Fail(error: FetchError.badRequest).eraseToAnyPublisher()
+        print("fetchData start")
+       guard let url = URL(string: urlString) else {
+           return Fail(error: FetchError.badRequest).eraseToAnyPublisher()
+       }
+       
+       return URLSession.shared.dataTaskPublisher(for: url)
+           .tryMap { (data, response) -> Data in
+               guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                   throw FetchError.badRequest
+               }
+               print("fetchData succed")
+               return data
            }
-           
-           return URLSession.shared.dataTaskPublisher(for: url)
-               .tryMap { (data, response) -> Data in
-                   guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                       throw FetchError.badRequest
-                   }
-                   return data
-               }
-               .decode(type: RecipeCollection.self, decoder: JSONDecoder())
-               .map { collection in
-                   self.recipeCollection = collection
-               }
-               .eraseToAnyPublisher()
+           .decode(type: RecipeCollection.self, decoder: JSONDecoder())
+           .eraseToAnyPublisher()
     }
     
 }
