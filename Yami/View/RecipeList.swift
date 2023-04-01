@@ -12,11 +12,13 @@ struct RecipeList: View {
     @EnvironmentObject var fetcher: RecipeCollectionFetcher
     var body: some View {
         var  cancellable = Set<AnyCancellable>()
-        List(fetcher.recipeCollection.meals, id: \.idMeal) { recipe in
-            RecipeRow(recipe: recipe)
-        }
+            VStack {
+                List(fetcher.recipeCollection.meals, id: \.idMeal) { recipe in
+                    RecipeRow(recipe: recipe)
+                }
+            }
         .onAppear{
-            try? fetcher.fetchData()
+            try? fetcher.fetchDataFirstLetter("b")
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
@@ -32,6 +34,8 @@ struct RecipeList: View {
 }
 struct RecipeList_Previews: PreviewProvider {
     static var previews: some View {
+        let fetcher = RecipeCollectionFetcher()
         RecipeList()
+            .environmentObject(fetcher)
     }
 }

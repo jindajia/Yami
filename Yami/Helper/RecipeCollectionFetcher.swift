@@ -10,7 +10,7 @@ import Combine
 class RecipeCollectionFetcher: ObservableObject {
     @Published var recipeCollection = RecipeCollection(meals: [Recipe.defaultRecipe])
     
-    let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
+    let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?f="
     
     enum FetchError: Error {
         case badRequest
@@ -19,10 +19,10 @@ class RecipeCollectionFetcher: ObservableObject {
     
     var cancellables = Set<AnyCancellable>()
 
-     func fetchData() throws -> AnyPublisher<RecipeCollection, Error>
+    func fetchDataFirstLetter(_ str: String) throws -> AnyPublisher<RecipeCollection, Error>
     {
         print("fetchData start")
-       guard let url = URL(string: urlString) else {
+       guard let url = URL(string: urlString + str) else {
            return Fail(error: FetchError.badRequest).eraseToAnyPublisher()
        }
        
