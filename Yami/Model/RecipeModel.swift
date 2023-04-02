@@ -27,3 +27,12 @@ struct Recipe : Codable, Hashable {
 struct RecipeCollection : Codable, Hashable {
     var meals: [Recipe]
 }
+
+struct RecipeAlphabet : Codable, Hashable{
+    var name: String
+    var recipes: RecipeCollection
+}
+
+struct RecipeDict : Codable, Hashable {
+    var value: [String: RecipeAlphabet]
+}

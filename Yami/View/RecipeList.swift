@@ -11,24 +11,22 @@ import Combine
 struct RecipeList: View {
     @EnvironmentObject var fetcher: RecipeCollectionFetcher
     var body: some View {
-        var  cancellable = Set<AnyCancellable>()
-            VStack {
-                List(fetcher.recipeCollection.meals, id: \.idMeal) { recipe in
-                    RecipeRow(recipe: recipe)
+        NavigationView{
+            let myList = fetcher.recipeAlphabetList
+            List {
+                ForEach(myList, id: \.self) { listItem in
+                    Section(header: Text(listItem.name)) {
+                        ForEach(listItem.recipes.meals, id: \.self) { recipe in
+                            // show data for the valueObject
+                            RecipeRow(recipe: recipe)
+                        }
+                    }
                 }
             }
+            .navigationTitle("Meals")
+        }
         .onAppear{
-            try? fetcher.fetchDataFirstLetter("b")
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }}, receiveValue: { recipeCollection in
-                        self.fetcher.recipeCollection = recipeCollection
-                    })
-                .store(in: &cancellable)
+            try? fetcher.fetchAllMeals()
         }
     }
 }
