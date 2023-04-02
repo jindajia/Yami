@@ -17,8 +17,11 @@ struct RecipeList: View {
                 ForEach(myList, id: \.self) { listItem in
                     Section(header: Text(listItem.name)) {
                         ForEach(listItem.recipes.meals, id: \.self) { recipe in
-                            // show data for the valueObject
-                            RecipeRow(recipe: recipe)
+                            NavigationLink {
+                                RecipeDetailView(recipe: recipe)
+                            } label: {
+                                RecipeRow(recipe: recipe)
+                            }
                         }
                     }
                 }

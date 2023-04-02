@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D63AE0CE29D691E9000F2C55 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE0CD29D691E9000F2C55 /* RecipeList.swift */; };
 		D63AE0D029D697F4000F2C55 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE0CF29D697F4000F2C55 /* ContentViewTests.swift */; };
+		D63AE0D229D94811000F2C55 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE0D129D94811000F2C55 /* RecipeDetailView.swift */; };
 		D6D7464E29D5493F00EB7654 /* YamiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D7464D29D5493F00EB7654 /* YamiApp.swift */; };
 		D6D7465029D5493F00EB7654 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D7464F29D5493F00EB7654 /* ContentView.swift */; };
 		D6D7465229D5494700EB7654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6D7465129D5494700EB7654 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		D63AE0CD29D691E9000F2C55 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		D63AE0CF29D697F4000F2C55 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
+		D63AE0D129D94811000F2C55 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		D6D7464A29D5493F00EB7654 /* Yami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D7464D29D5493F00EB7654 /* YamiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamiApp.swift; sourceTree = "<group>"; };
 		D6D7464F29D5493F00EB7654 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				D6D7465D29D549E600EB7654 /* RecipeRow.swift */,
 				D63AE0CD29D691E9000F2C55 /* RecipeList.swift */,
+				D63AE0D129D94811000F2C55 /* RecipeDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				D6D7464E29D5493F00EB7654 /* YamiApp.swift in Sources */,
 				D6D7465E29D549E600EB7654 /* RecipeRow.swift in Sources */,
 				D63AE0CE29D691E9000F2C55 /* RecipeList.swift in Sources */,
+				D63AE0D229D94811000F2C55 /* RecipeDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -381,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -11,9 +11,9 @@ struct RecipeRow: View {
     var recipe: Recipe
     var body: some View {
         HStack {
-            Text(recipe.idMeal)
-            Spacer()
             Text(recipe.strMeal)
+            Spacer()
+            Text(recipe.strCategory ?? "")
         }
     }
 }
