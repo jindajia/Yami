@@ -14,6 +14,7 @@ struct Recipe : Codable, Hashable {
     var strArea: String?
     var strInstructions: String?
     var strTags: String?
+    var strMealThumb: String?
     var strYoutube: String?
     var strSource: String?
     var strImageSource: String?

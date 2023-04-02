@@ -16,7 +16,7 @@ struct RecipeDetailView: View {
                     .font(.title)
                 Divider()
                 VStack {
-                    
+                    LoadableImageView(recipe: recipe)
                     Text("Instructions")
                         .font(.title2)
                     Text(recipe.strInstructions ?? "")
