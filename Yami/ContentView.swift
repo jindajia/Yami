@@ -11,11 +11,8 @@ struct ContentView: View, Sendable {
     @EnvironmentObject var fetcher: RecipeCollectionFetcher
 
     var body: some View {
-        VStack {
-            RecipeList()
-                .environmentObject(fetcher)
-        }
-        .padding()
+        RecipeList()
+            .environmentObject(fetcher)
     }
 }
 
