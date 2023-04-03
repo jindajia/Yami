@@ -93,9 +93,11 @@
 		D6D7464C29D5493F00EB7654 /* Yami */ = {
 			isa = PBXGroup;
 			children = (
-				D6D7466329D5FACA00EB7654 /* Helper */,
+				D6F58F2E29DA7F530074F8A2 /* Home */,
+				D6F58F2F29DA7F5D0074F8A2 /* Detail */,
 				D6D7465C29D5496400EB7654 /* Model */,
-				D6D7465B29D5495C00EB7654 /* View */,
+				D6D7466329D5FACA00EB7654 /* Helper */,
+				D6F58F2D29DA7EFB0074F8A2 /* ViewModel */,
 				D6D7464D29D5493F00EB7654 /* YamiApp.swift */,
 				D6D7464F29D5493F00EB7654 /* ContentView.swift */,
 				D6D7466629D5FC5E00EB7654 /* meals.json */,
@@ -113,21 +115,9 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D6D7465B29D5495C00EB7654 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D6D7465D29D549E600EB7654 /* RecipeRow.swift */,
-				D63AE0CD29D691E9000F2C55 /* RecipeList.swift */,
-				D63AE0D129D94811000F2C55 /* RecipeDetailView.swift */,
-				D63AE0D329D957BF000F2C55 /* LoadableImageView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D6D7465C29D5496400EB7654 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6D7465F29D54A1900EB7654 /* RecipeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +139,64 @@
 				D6D7467729D618B600EB7654 /* RecipeCollectionFetcherTests.swift */,
 			);
 			path = YamiTests;
+			sourceTree = "<group>";
+		};
+		D6F58F2D29DA7EFB0074F8A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6F58F2E29DA7F530074F8A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D6F58F3229DA7FB60074F8A2 /* Model */,
+				D6F58F3129DA7F8F0074F8A2 /* ViewModel */,
+				D6F58F3029DA7F720074F8A2 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D6F58F2F29DA7F5D0074F8A2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D6F58F3329DA7FD70074F8A2 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D6F58F3029DA7F720074F8A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D6D7465D29D549E600EB7654 /* RecipeRow.swift */,
+				D63AE0CD29D691E9000F2C55 /* RecipeList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D6F58F3129DA7F8F0074F8A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6F58F3229DA7FB60074F8A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6D7465F29D54A1900EB7654 /* RecipeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F58F3329DA7FD70074F8A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D63AE0D129D94811000F2C55 /* RecipeDetailView.swift */,
+				D63AE0D329D957BF000F2C55 /* LoadableImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yami/Preview Content\"";
+				DEVELOPMENT_TEAM = BP92WJTSX8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -435,6 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yami/Preview Content\"";
+				DEVELOPMENT_TEAM = BP92WJTSX8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
