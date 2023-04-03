@@ -66,11 +66,16 @@ struct Recipe : Codable, Hashable {
                                         strMeal: "N/A")
 }
 
+extension Recipe: Identifiable {
+    var id: Int { return Int(idMeal) ?? 0 }
+}
+
 struct RecipeCollection : Codable, Hashable {
     var meals: [Recipe]
 }
 
-struct RecipeAlphabet : Codable, Hashable{
+struct RecipeAlphabet : Codable, Hashable, Identifiable{
+    var id = UUID()
     var name: String
     var recipes: RecipeCollection
 }

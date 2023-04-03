@@ -14,9 +14,9 @@ struct RecipeList: View {
         let myList = fetcher.recipeAlphabetList
         NavigationView{
             List {
-                ForEach(myList, id: \.self) { listItem in
+                ForEach(myList) { listItem in
                     Section(header: Text(listItem.name)) {
-                        ForEach(listItem.recipes.meals, id: \.self) { recipe in
+                        ForEach(listItem.recipes.meals) { recipe in
                             NavigationLink {
                                 RecipeDetailView(recipe: recipe)
                             } label: {
@@ -27,6 +27,7 @@ struct RecipeList: View {
                 }
             }
             .navigationTitle("Meals")
+            .listStyle(GroupedListStyle())
         }
         .onAppear{
             try? fetcher.fetchAllMeals()

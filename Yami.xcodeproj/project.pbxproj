@@ -22,6 +22,7 @@
 		D6D7466F29D5FFBB00EB7654 /* YamiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D7466E29D5FFBB00EB7654 /* YamiTests.swift */; };
 		D6D7467629D60C3C00EB7654 /* RecipeCollectionFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D7467529D60C3C00EB7654 /* RecipeCollectionFetcher.swift */; };
 		D6D7467829D618B600EB7654 /* RecipeCollectionFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D7467729D618B600EB7654 /* RecipeCollectionFetcherTests.swift */; };
+		D6F58F3529DA80CD0074F8A2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F58F3429DA80CD0074F8A2 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D6D7466E29D5FFBB00EB7654 /* YamiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamiTests.swift; sourceTree = "<group>"; };
 		D6D7467529D60C3C00EB7654 /* RecipeCollectionFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionFetcher.swift; sourceTree = "<group>"; };
 		D6D7467729D618B600EB7654 /* RecipeCollectionFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionFetcherTests.swift; sourceTree = "<group>"; };
+		D6F58F3429DA80CD0074F8A2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		D6F58F3129DA7F8F0074F8A2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D6F58F3429DA80CD0074F8A2 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				D6D7466529D5FB0E00EB7654 /* RecipesLoader.swift in Sources */,
 				D6D7467629D60C3C00EB7654 /* RecipeCollectionFetcher.swift in Sources */,
 				D6D7465029D5493F00EB7654 /* ContentView.swift in Sources */,
+				D6F58F3529DA80CD0074F8A2 /* HomeViewModel.swift in Sources */,
 				D6D7466029D54A1900EB7654 /* RecipeModel.swift in Sources */,
 				D6D7464E29D5493F00EB7654 /* YamiApp.swift in Sources */,
 				D6D7465E29D549E600EB7654 /* RecipeRow.swift in Sources */,
