@@ -47,6 +47,7 @@ class RecipeCollectionFetcher: ObservableObject {
                return data
            }
            .decode(type: RecipeCollection.self, decoder: JSONDecoder())
+           .receive(on: RunLoop.main)
            .sink(receiveCompletion: { completion in
                switch completion {
                case .finished:

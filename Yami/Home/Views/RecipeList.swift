@@ -11,8 +11,8 @@ import Combine
 struct RecipeList: View {
     @EnvironmentObject var fetcher: RecipeCollectionFetcher
     var body: some View {
+        let myList = fetcher.recipeAlphabetList
         NavigationView{
-            let myList = fetcher.recipeAlphabetList
             List {
                 ForEach(myList, id: \.self) { listItem in
                     Section(header: Text(listItem.name)) {
