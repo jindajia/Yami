@@ -11,7 +11,7 @@ class RecipeCollectionFetcher: ObservableObject {
 //    @Published var recipeCollection = RecipeCollection(meals: [Recipe.defaultRecipe])
     @Published var recipeDict: RecipeDict = RecipeDict(value: [:])
     @Published var recipeAlphabetList: [RecipeAlphabet] = []
-
+    @Published var recipeCategoryModel: RecipeCategoryModel = RecipeCategoryModel(categorySet: Set<String>())
     var  cancellable = Set<AnyCancellable>()
 
     let urlString = "https://www.themealdb.com/api/json/v1/1/search.php?f="
@@ -28,7 +28,7 @@ class RecipeCollectionFetcher: ObservableObject {
         for char in str {
             try fetchDataFirstLetter(String(char))
         }
-
+        print(self.recipeCategoryModel.categorySet)
     }
     
     func fetchDataFirstLetter(_ str: String) throws -> ()
@@ -56,6 +56,13 @@ class RecipeCollectionFetcher: ObservableObject {
                    print(error.localizedDescription)
                }}, receiveValue: { recipeCollection in
                    self.recipeDict.value[str] = RecipeAlphabet(name: str, recipes: recipeCollection)
+                   var categorySet: Set<String> = self.recipeCategoryModel.categorySet
+                   recipeCollection.meals.forEach{ meal in
+                       if let category = meal.strCategory, !category.isEmpty {
+                           categorySet.insert(category)
+                       }
+                   }
+                   self.recipeCategoryModel.categorySet = categorySet
                    let rd = self.recipeDict.value
                    var myList: [RecipeAlphabet] = []
                    for key in rd.keys.sorted() {
